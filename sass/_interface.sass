@@ -1,0 +1,125 @@
+.container
+    &__relative
+        position: relative
+.phone
+    font-weight: 600
+    font-size: 18px
+    &--primary
+        color: $dark
+.button
+    border: none
+    border-radius: 5px
+    font-weight: bold
+    text-align: center
+    transition: .4s
+    &--primary
+        color: $light
+        background: linear-gradient(180deg, $lightPink 0%, $darkPink 100%)
+        box-shadow: 0px 2px 10px $darkPink
+        &:hover
+            background: linear-gradient(180deg, $pink 0%, $darkPink 100%)
+        &:focus
+            background: linear-gradient(180deg, $pink 0%, $darkPink 100%)
+    &__blick
+        position: relative
+        overflow: hidden
+        transform: translate3d(0,0,0)
+        &::after
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            left: -50px
+            background-color: $light
+            border-radius: 100%
+            transform: scale(0)
+            z-index: 20
+            animation: ripple 4s linear infinite
+@keyframes ripple 
+    20%
+        opacity: 0;     
+        transform: scale(2.5)
+    100%  
+        opacity: 0;     
+        transform: scale(2.5)
+.title
+    font-size: 30px
+    margin: 0
+    font-weight: 600
+    line-height: 41px
+    text-align: center
+    span
+        color: $darkPink
+    &--primary
+        color: $darkText            
+.mask-nav
+    display: none
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 100%
+    height: 100%
+    background-color: rgba($dark, .9)      
+    z-index: 40      
+.input,
+.select,
+.textarea
+    width: 100%
+    border: 1px solid $lightGrey
+    border-radius: 5px
+.tooltiper
+    display: inline-block
+    color: $dark
+    perspective: 600px
+    transform-style: preserve-3d
+.tooltiper .tooltip
+    border: 1px solid $dark
+    min-width: 237px
+    position: absolute
+    font-size: 12px
+    text-align: left
+    background-color: $light
+    color: $dark
+    padding: 15px
+    border-radius: 10px
+    visibility: hidden
+    display: block
+    line-height: 20px
+    top: 0
+    left: 0
+    transform: rotateX(90deg) translateZ(0px)
+    opacity: 0
+    transition: transform 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53), opacity 0.1s ease-out 0.1s
+.tooltiper:hover .tooltip
+    visibility: visible
+    transform: rotateX(0) translateZ(20px)
+    opacity: 1
+    transition: transform 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53), opacity 0.1s ease-out
+#user_name-error,
+#user_phone-error,
+#label-name-error,
+#label-phone-error,
+#modal-name-error,
+#modal-phone-error,
+#quiz-name-error,
+#quiz-phone-error
+    color: red
+    font-size: 12px
+    position: absolute
+#user_name-error,
+#user_phone-error,
+    bottom: -16px
+    left: 5px
+#label-name-error,
+#label-phone-error
+    bottom: 4px
+    left: 5px
+#modal-name-error,
+#modal-phone-error    
+    bottom: -16px
+    left: 5px
+#quiz-name-error,
+#quiz-phone-error
+    bottom: -16px
+    left: 5px
